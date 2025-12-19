@@ -34,7 +34,6 @@ fn static_serve() -> Router {
 fn api_serve() -> Router {
     Router::new().fallback(|| async { (StatusCode::NOT_FOUND, "API not found") })
 }
-
 pub async fn start(config: Arc<DotEnvyConfig>, _db_pool: Arc<PgPoolSquad>) -> Result<()> {
     let app = Router::new()
         .merge(static_serve())

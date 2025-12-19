@@ -45,3 +45,14 @@ pub fn get_stage() -> Stage {
     let stage_str = std::env::var("STAGE").unwrap_or("".to_string());
     Stage::try_form(&stage_str).unwrap_or_default()
 }
+
+
+pub fn get_user_secret() -> Result<String> {
+    let dotenvy_env = match load() {
+        Ok(env) => env,
+        Err(e) => {
+            return Err(anyhow::anyhow!("Failed to load .env file: {}", e));
+        }
+    };
+    Ok(dotenvy_env.secret)
+}

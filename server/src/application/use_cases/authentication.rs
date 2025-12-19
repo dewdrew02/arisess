@@ -59,8 +59,8 @@ impl <T> AuthenticationUseCase<T>
             Ok(Passport{
                 refresh_token,
                 access_token,
-                token_type: todo!(),
-                expires: todo!()
+                token_type: "Bearer".to_string(),
+                expires: 3600 // 1 hour
             })
 
 

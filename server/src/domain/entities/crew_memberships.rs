@@ -14,3 +14,7 @@ pub struct CrewMemberShips {
     pub brawler_id: i32,
     pub mission_id: i32,
 }
+
+// Maximum number of crew memberships allowed per mission.
+// Exported so other modules can import `MAX_CREW_MEMBERSHIPS_PER_MISSION`.
+pub const MAX_CREW_MEMBERSHIPS_PER_MISSION: u32 = 3;

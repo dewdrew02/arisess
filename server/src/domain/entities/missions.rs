@@ -1,4 +1,8 @@
 use crate::{domain::value_objects::mission_model::MissionModel, infrastructure::database::schema::missions};
+
+// Re-export max crew constant from `crew_memberships` so callers importing
+// from `entities::missions` continue to work.
+pub use crate::domain::entities::crew_memberships::MAX_CREW_MEMBERSHIPS_PER_MISSION;
 use chrono::NaiveDateTime;
 use diesel::prelude::*;
 
